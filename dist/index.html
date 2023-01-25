@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo List</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <h1>ToDo <span>List</span></h1>
+      </div>
+      <div class="sidebar">
+        <ul>
+          <li class="addTask">Add task</li>
+          <li class="allTasks">All tasks</li>
+          <li class="addProject">Add projects</li>
+          <li class="completeTasks">Completed</li>
+        </ul>
+        <div class="projects">
+          <h1>Projects</h1>
+        </div>
+      </div>
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <!-- <span class="close">&time;</span> -->
+          <form class="formData">
+            <input type="text" name="title" placeholder="Tittle" />
+            <input type="text" name="description" placeholder="Description" />
+            <input type="text" name="dueDate" placeholder="Due Date" />
+            <select name="priority" id="priotity">
+              <option value="low">low</option>
+              <option value="medium">medium</option>
+              <option value="high">high</option>
+            </select>
+            <!-- <div class="checkbox">
+              
+              <input type="checkbox" name="status" id="status" />
+            </div> -->
+            <button class="btnForm" type="submit">Create</button>
+          </form>
+        </div>
+      </div>
+      <div id="myModal2" class="modal2">
+        <!-- Modal content -->
+        <div class="modal-content2">
+          <!-- <span class="close">&time;</span> -->
+          <form class="formData2">
+            <input type="text" name="name" placeholder="Name" />
+
+            <button class="btnForm" type="submit">Create</button>
+          </form>
+        </div>
+      </div>
+      <div id="myModal3" class="modal3">
+        <!-- Modal content -->
+        <div class="modal-content3">
+          <!-- <span class="close">&time;</span> -->
+          <form class="formData3">
+            <input type="text" name="title" id="title" placeholder="Tittle" />
+            <input
+              type="text"
+              name="description"
+              id="description"
+              placeholder="Description"
+            />
+            <input
+              type="text"
+              id="dueDate"
+              name="dueDate"
+              placeholder="Due Date"
+            />
+            <select name="priority" id="priority">
+              <option value="low">low</option>
+              <option value="medium">medium</option>
+              <option value="high">high</option>
+            </select>
+            <!-- <div class="checkbox">
+              
+              <input type="checkbox" name="status" id="status" />
+            </div> -->
+            <button class="btnForm" type="submit">Edit</button>
+          </form>
+        </div>
+      </div>
+      <div class="mainTasks"></div>
+    </div>
+    <script src="bundle.js"></script>
+  </body>
+</html>
