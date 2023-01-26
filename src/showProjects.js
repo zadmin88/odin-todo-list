@@ -14,6 +14,12 @@ const showProjects = (projects, element, modal, modal3) => {
       window.currProject.push(project)
 
       showTasks(project, mainTasks, modal, modal3)
+
+      const items = ul.getElementsByTagName('li')
+      for (let i = 0; i < items.length; ++i) {
+        items[i].classList.remove('selected')
+      }
+      li.classList.add('selected')
     })
     ul.appendChild(li)
   })

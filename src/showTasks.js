@@ -1,4 +1,6 @@
 const showTasks = (project, element, modal, modal3) => {
+  const cardsDiv = document.createElement('div')
+  cardsDiv.classList.add('cardsDiv')
   element.innerHTML = ''
   const titleAddDiv = document.createElement('div')
   titleAddDiv.classList.add('titleAdd')
@@ -51,8 +53,10 @@ const showTasks = (project, element, modal, modal3) => {
       priority.textContent = `${todo.priority}`
 
       const editBtn = document.createElement('button')
+      editBtn.classList.add('editBtn')
       editBtn.textContent = 'Edit'
       const deleteBtn = document.createElement('button')
+      deleteBtn.classList.add('deleteBtn')
       deleteBtn.textContent = 'Delete'
 
       deleteBtn.addEventListener('click', () => {
@@ -88,10 +92,13 @@ const showTasks = (project, element, modal, modal3) => {
       cardDiv.appendChild(editBtn)
       cardDiv.appendChild(deleteBtn)
 
-      element.appendChild(cardDiv)
+      cardsDiv.appendChild(cardDiv)
+
+      // element.appendChild(cardDiv)
     })
 
   element.prepend(titleAddDiv)
+  element.appendChild(cardsDiv)
 
   return element
 }

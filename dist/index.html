@@ -9,13 +9,13 @@
   <body>
     <div class="container">
       <div class="navbar">
-        <h1>ToDo <span>List</span></h1>
+        <h1>Todo<span>-List</span></h1>
       </div>
       <div class="sidebar">
         <ul>
           <li class="addTask">Add task</li>
-          <li class="allTasks">All tasks</li>
           <li class="addProject">Add projects</li>
+          <li class="allTasks">All tasks</li>
           <li class="completeTasks">Completed</li>
         </ul>
         <div class="projects">
@@ -29,7 +29,7 @@
           <form class="formData">
             <input type="text" name="title" placeholder="Tittle" />
             <input type="text" name="description" placeholder="Description" />
-            <input type="text" name="dueDate" placeholder="Due Date" />
+            <input type="date" name="dueDate" placeholder="Due Date" />
             <select name="priority" id="priotity">
               <option value="low">low</option>
               <option value="medium">medium</option>
@@ -67,7 +67,7 @@
               placeholder="Description"
             />
             <input
-              type="text"
+              type="date"
               id="dueDate"
               name="dueDate"
               placeholder="Due Date"

@@ -8,13 +8,32 @@ let projects = []
 window.currProject = []
 window.currTodo = {}
 
-const noProject = createProject('without Project')
+const noProject = createProject('NoProject')
 const allTasksProject = createProject('All Tasks')
 const completedTasks = createProject('Completed Tasks')
 
 projects.push(noProject)
 projects.push(allTasksProject)
 projects.push(completedTasks)
+
+const todo1 = createTodo(
+  'Climb everest',
+  'without any clothes',
+  '22/01/2023',
+  'high',
+  'true'
+)
+
+const todo2 = createTodo(
+  'descent Everest',
+  'Breathing',
+  '22/01/2023',
+  'high',
+  'true'
+)
+
+noProject.addTodo(todo1)
+noProject.addTodo(todo2)
 
 const filteredProjects = projects
   .filter((project) => project.name !== 'All Tasks')
@@ -33,6 +52,7 @@ const completeTasks = document.querySelector('.completeTasks')
 const addProject = document.querySelector('.addProject')
 const projectsDiv = document.querySelector('.projects')
 
+showTasks(noProject, mainTasks, modal, modal3)
 addTask.addEventListener('click', () => {
   modal.style.display = 'block'
 })
@@ -98,6 +118,8 @@ allTasks.addEventListener('click', () => {
   })
 
   showTasks(allTasksProject, mainTasks, modal)
+  allTasks.classList.add('selected')
+  completeTasks.classList.remove('selected')
 })
 
 completeTasks.addEventListener('click', () => {
@@ -106,6 +128,8 @@ completeTasks.addEventListener('click', () => {
     completedTasks.todos = completedTasks.todos.concat(
       project.todos.filter((todo) => todo.state === false)
     )
+    allTasks.classList.remove('selected')
+    completeTasks.classList.remove('selected')
   })
 
   showTasks(completedTasks, mainTasks, modal)
@@ -113,6 +137,8 @@ completeTasks.addEventListener('click', () => {
 
 addProject.addEventListener('click', () => {
   modal2.style.display = 'block'
+  allTasks.classList.remove('selected')
+  completeTasks.classList.remove('selected')
 })
 
 // When the user clicks anywhere outside of the modal, close it
@@ -129,29 +155,3 @@ window.onclick = function (event) {
     modal3.style.display = 'none'
   }
 }
-
-// const todo1 = createTodo(
-//   'estidar',
-//   'estudiar mucho',
-//   '22/01/2023',
-//   'high',
-//   'true'
-// )
-
-// const todo2 = createTodo(
-//   'estidar2',
-//   'estudiar mucho',
-//   '22/01/2023',
-//   'high',
-//   'true'
-// )
-// todo1.changeState()
-// todo1.changePriority('low')
-
-// const project1 = createProject('pruebas')
-// project1.addTodo(todo1)
-// project1.addTodo(todo2)
-
-// project1.deleteTodo(todo1.id)
-
-// console.log(project1)
